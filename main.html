@@ -1,0 +1,51 @@
+<!-- Main page for weeb translator -->
+<!DOCTYPE html>
+
+<html>
+<head>
+  <meta charset = 'utf-8'>
+  <link rel="stylesheet"
+  href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+  integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+  crossorigin="anonymous">
+  <title>Weeb Translator</title>
+
+  <style>
+  </style>
+
+  <script>
+    function output_txt_from_txtbox(){
+      var text_to_translate = document.getElementById("text2translate").value;
+      document.getElementById("out_text").innerHTML = text_to_translate;
+    }
+  </script>
+
+</head>
+
+<body>
+  <div class = "container">
+  <h1> Weeb Translator </h1>
+  <p> Translate any English text into Weebenese! Impress your Japanese-phile
+    friends! </p>
+  <form>
+    <div class="form-group">
+      <label for='text2translate'>Text to translate:</label>
+      <textarea class = "form-control" id="text2translate" rows="3" placeholder="Translate to weebenese here"></textarea>
+    </div>
+  </form>
+  <div>
+    <button onclick="output_txt_from_txtbox()" class="btn btn primary">Translate</button>
+  </div>
+
+  <h5> Translated text will appear below: </h5>
+  <div class = "card">
+      <div class = "card-body">
+        <div id=out_text></div>
+      </div>
+  </div>
+
+</div>
+
+</body>
+
+</html>
