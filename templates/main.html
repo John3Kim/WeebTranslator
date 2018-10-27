@@ -1,0 +1,50 @@
+<!-- Main page for weeb translator -->
+<!DOCTYPE html>
+
+<html>
+<head>
+  <meta charset = 'utf-8'>
+  <link rel="stylesheet"
+  href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+  integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+  crossorigin="anonymous">
+  <title>Weeb Translator</title>
+</head>
+
+<body>
+  <div class = "container">
+  <h1> Weeb Translator </h1>
+  <p> Translate any English text into Weebenese! Impress your Japanese-phile
+    friends! 
+  </p>
+  <form action="" method="post" role="form">
+    <div class="form-group">
+      <label for='text_to_translate'>Text to translate:</label>
+      <textarea class = "form-control" rows="3" id="text_to_translate" name="text_to_translate" placeholder="Translate to weebenese here"></textarea>
+    </div>
+	<input type="submit" name="translate_text" class="btn btn-success" value="Translate"></input> 
+  </form>
+
+  <h5> Translated text will appear below: </h5>
+  <div class = "card">
+      <div class = "card-body">
+
+		{% with messages = get_flashed_messages() %}
+            {% if messages %}
+                    {% for message in messages %}
+					<div id=out_text>
+                        <p>{{ message }} </p>
+					</div>
+                    {% endfor %}
+            {% endif %}
+        {% endwith %}
+		
+
+      </div> 
+  </div>
+
+  </div>
+
+</body>
+
+</html>
